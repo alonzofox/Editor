@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<service xmlns="http://www.w3.org/2007/app" xmlns:a="http://www.w3.org/2005/Atom">
+  <workspace>
+    <a:title>Device</a:title>
+    <collection href="controllers">
+      <a:title>Controllers</a:title>
+      <a:link rel="profile" href="device.xsd#controller"/>
+    </collection>
+    <collection href="displays">
+      <a:title>Displays</a:title>
+      <a:link rel="profile" href="device.xsd#display"/>
+    </collection>
+  </workspace>
+  <workspace>
+    <a:title>Content</a:title>
+    <collection href="files">
+      <a:title>Files</a:title>
+      <a:link rel="profile" href="content.xsd#file-metadata"/>
+    </collection>
+  </workspace>
+</service>

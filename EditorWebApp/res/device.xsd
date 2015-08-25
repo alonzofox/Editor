@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:tns="http://standards.daktronics.com/2015/control-system"
+  targetNamespace="http://standards.daktronics.com/2015/control-system">
+  <xs:element id="controller" name="Controller" type="tns:Controller"/>
+  <xs:complexType name="Controller">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="VIP">
+    <xs:complexContent>
+      <xs:extension base="tns:Controller">
+        <xs:sequence>
+          <xs:element name="SysControlUrl" minOccurs="0" maxOccurs="1" type="xs:anyURI"/>
+          <xs:element name="SysControlVersion" minOccurs="0" maxOccurs="1" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DMP">
+    <xs:complexContent>
+      <xs:extension base="tns:Controller">
+        <xs:sequence>
+          <xs:element name="PlayControlUrl" minOccurs="0" maxOccurs="1" type="xs:anyURI"/>
+          <xs:element name="ConfigServiceUrl" minOccurs="0" maxOccurs="1" type="xs:anyURI"/>
+          <xs:element name="StatusServiceUrl" minOccurs="0" maxOccurs="1" type="xs:anyURI"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element id="display" name="Display">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Rows" minOccurs="0" maxOccurs="1" type="xs:int"/>
+        <xs:element name="Cols" minOccurs="0" maxOccurs="1" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
