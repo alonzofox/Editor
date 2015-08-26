@@ -75,7 +75,7 @@ export class XmlElement {
             const nodes = this._node.getElementsByTagNameNS(ns, names[i]);
             for (let j = 0, m = nodes.length; !stop && j < m; j++) {
 
-                if (nodes[j].parentElement === this._node) {
+                if (nodes[j].parentNode === this._node) {
 
                     stop = !fn(new XmlElement(<HTMLElement>nodes[j]));
                 }

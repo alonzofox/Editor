@@ -1,5 +1,5 @@
 ﻿/// <amd-dependency path="text!res/xsdschema.xsd" name="xsdXml"/>
-import { XmlDocument, XmlElement } from "xml"
+import { XmlDocument, XmlElement } from "model/xml"
 
 declare const xsdXml: string;
 const xsd = "http://www.w3.org/2001/XMLSchema";
@@ -77,7 +77,7 @@ export class XsdSchema {
     constructor(private _root: XmlElement, at: (ns: string) => XsdSchema) {
 
         this._rootIndex = Object.create(null);
-        this.roots = this._root.all(xsd, "element").map(root => {
+        this._roots = this._root.all(xsd, "element").map(root => {
 
             const element = new XsdElement(root, at);
             this._rootIndex[element.name] = element;

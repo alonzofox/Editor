@@ -1,1 +1,4 @@
-﻿<p data-bind="text: title"></p>
+﻿<div data-bind="foreach: roots">
+    <p data-bind="text: $data.name"></p>
+    <p data-bind="text: $data.type"></p>
+</div>
